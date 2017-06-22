@@ -31,7 +31,7 @@
 }
 /*Slider height override*/
 .slider {
-    height: 240px !important;
+    height: 50% !important;
 }
 
 .mainframe-wing span {
@@ -76,8 +76,17 @@
 }
 
 .slider-track {
-    border: 1px solid #d4d4d4;
+    border: none;
     width: 15px !important;
+}
+
+.slider-selection {
+    background: #eeeeee !important;
+}
+
+/*Border fix*/
+.slider-track, .slider-selection, .slider-track-low, .slider-track-high {
+    border-radius: 0 !important;
 }
 
 /*Wing width correction and offset fix*/
@@ -117,19 +126,24 @@
 }
 
 #slider .rs-range-color {
-    background-color: #444444;
+    background-color: #389884;
 }
 
 #slider .rs-path-color {
-    background-color: #444444;
+    background-color: #eeeeee;
+}
+
+#slider .rs-border {
+    border-color: white;
 }
 
 #slider .rs-handle {
-    background-color: darkgreen;
+    background-color: #389884;
 }
 
 #slider .rs-tooltip, #slider .rs-tooltip-text {
     font-size: 30px;
+    color: #6b6b6b;
 }
 
 /*----------------------------------------------------------------------------------------------------------------------------------------------------------------*/
