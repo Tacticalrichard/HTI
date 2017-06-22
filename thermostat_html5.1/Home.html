@@ -1,0 +1,36 @@
+﻿<head>
+    <link rel="stylesheet" href="css/home.css">
+    <script>
+        $(".mainframe").bind("load", function () {
+            $.getScript("js/home.js");
+        });
+    </script>
+</head>
+
+<div class="row mainframe">
+    <div class="col-xs-2 mainframe-divider mainframe-wing">
+        <span id="sliderVal1">23C</span>
+        <i class="material-icons addTemp" style="left:15px" onclick="addDayTemp()">add</i>
+        <input class="daynightSlider1" data-slider-id="slider1" />
+        <i class="material-icons subtractTemp" style="left:15px" onclick="subtractDayTemp()">remove</i>
+    </div>
+    <div class="col-xs-8 mainframe-divider">
+        <div class="col-xs-12 mainframe-box">
+            <h1>Day</h1>
+        </div>
+        <div class="col-xs-12 mainframe-circle">
+            <div id="slider"></div>
+        </div>
+        <div class="col-xs-12 mainframe-box">
+            <button type="button" class="btn btn-primary btn-success btn-lg">Save</button>
+            <button type="button" class="btn btn-default btn-danger btn-lg">Discard</button>
+        </div>
+    </div>
+    <div class="col-xs-2 mainframe-divider mainframe-wing">
+        <span id="sliderVal2">18C</span>
+        <i class="material-icons addTemp" style="right:12px" onclick="addNightTemp()">add</i>
+        <input class="daynightSlider2" data-slider-id="slider2" />
+        <i class="material-icons subtractTemp" style="right:12px" onclick="subtractNightTemp()">remove</i>
+    </div>
+</div>
+<div class="col-xs-12 footer"></div>

@@ -1,0 +1,8 @@
+/*Header fix*/
+.list-wrapper {
+    height: calc(100% - 60px);
+    margin-top: 60px;
+}
+.mainframe-item {
+    border: 1px solid red;
+}
