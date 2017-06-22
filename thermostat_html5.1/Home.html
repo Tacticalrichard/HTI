@@ -1,10 +1,5 @@
 ﻿<head>
     <link rel="stylesheet" href="css/home.css">
-    <script>
-        $(".mainframe").bind("load", function () {
-            $.getScript("js/home.js");
-        });
-    </script>
 </head>
 
 <div class="row mainframe">
@@ -34,3 +29,14 @@
     </div>
 </div>
 <div class="col-xs-12 footer"></div>
+
+<script language="text/javascript">
+    function load_js() {
+        var head = document.getElementsByTagName('head')[0];
+        var script = document.createElement('script');
+        script.type = 'text/javascript';
+        script.src = '/thermostat_html5.1/js/home.js';
+        head.appendChild(script);
+    }
+    load_js();
+</script>

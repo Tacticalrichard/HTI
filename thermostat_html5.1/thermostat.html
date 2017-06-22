@@ -28,7 +28,7 @@
 
 
             //Executables
-            $(".container-fluid").load("/home.html");
+            $(".container-fluid").load("/thermostat_html5.1/home.html");
             $(window).bind("load", function () {
                 $.getScript("js/home.js");
             });
@@ -45,7 +45,7 @@
                 $("body").animate({
                     "left": $("body").width()
                 }, animSpeed).promise().done(function () {
-                    $("body").load("/addevent.html", function () {
+                    $("body").load("/thermostat_html5.1/addevent.html", function () {
                         $("body").animate({
                             "left": 0
                         }, animSpeed);
@@ -58,7 +58,7 @@
                 $(".container-fluid").animate({
                     "left": $(".container-fluid").width()
                 }, animSpeed).promise().done(function () {
-                    $(".container-fluid").load(".../home.html", function () {
+                    $(".container-fluid").load("/thermostat_html5.1/home.html", function () {
                         $(".container-fluid").animate({
                             "left": 0
                         }, animSpeed);
@@ -71,7 +71,7 @@
                 $(".container-fluid").animate({
                     "left": $(".container-fluid").width()
                 }, animSpeed).promise().done(function () {
-                    $(".container-fluid").load("/weekplanning.html", function () {
+                    $(".container-fluid").load("/thermostat_html5.1/weekplanning.html", function () {
                         $(".container-fluid").animate({
                             "left": 0
                         }, animSpeed);
@@ -84,7 +84,7 @@
                 $(".container-fluid").animate({
                     "left": $(".container-fluid").width()
                 }, animSpeed).promise().done(function () {
-                    $(".container-fluid").load("/settings.html", function () {
+                    $(".container-fluid").load("/thermostat_html5.1/settings.html", function () {
                         $(".container-fluid").animate({
                             "left": 0
                         }, animSpeed);

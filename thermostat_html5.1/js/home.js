@@ -1,8 +1,9 @@
 $("#slider").roundSlider({
-    radius: 125,
-    width: 0.1,
+    radius: 105,
+    width: 5,
     circleShape: "full",
     startAngle: 90,
+    endAngle: 90,
     handleSize: 25,
     handleShape: "round",
     sliderType: "min-range",
