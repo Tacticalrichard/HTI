@@ -1,0 +1,36 @@
+/*Header fix*/
+#day {
+    font-size: 20px;
+    margin: 80px 0 10px 10px;
+}
+
+.list-group {
+    height: calc(100% - 60px);
+}
+
+.list-group-item {
+    font-size: 14px;
+}
+
+    .list-group-item div p {
+        font-size: 20px;
+    }
+
+.badges {
+    position: absolute;
+    top: 10px;
+    right: 15px;
+}
+
+    .badges i {
+        font-size: 20px !important;
+    }
+
+.btn {
+    height: 80px !important;
+    border: none !important;
+    border-radius: 0 !important;
+    background-color: #3EACA8 !important;
+    position: fixed;
+    bottom: 0;
+}

@@ -1,3 +1,12 @@
+//Variables
+var currentTemp = get('currentTemperature', 'current_temperature');
+var targetTemp = get('targetTemperature', 'target_temperature');
+var dayTemp = get('dayTemperature', 'day_temperature');
+var nightTemp = get('nightTemperature', 'night_temperature');
+
+//var intervalLoop = setInterval(function () { clockTemp() }, 200);
+
+//Executes
 $("#slider").roundSlider({
     radius: 105,
     width: 5,
@@ -10,10 +19,10 @@ $("#slider").roundSlider({
     min: 5,
     max: 30,
     step: 0.1,
-    value: 21
+    value: targetTemp
 });
 
-$(".daynightSlider1").slider({
+$(".daynightSlider1").bootstrapSlider({
     orientation: 'vertical',
     tooltip_position: 'right',
     precision: 1,
@@ -21,9 +30,9 @@ $(".daynightSlider1").slider({
     min: 5,
     max: 30,
     step: 0.1,
-    value: 23,
+    value: dayTemp
 });
-$(".daynightSlider2").slider({
+$(".daynightSlider2").bootstrapSlider({
     orientation: 'vertical',
     tooltip_position: 'left',
     precision: 1,
@@ -31,27 +40,63 @@ $(".daynightSlider2").slider({
     min: 5,
     max: 30,
     step: 0.1,
-    value: 18,
+    value: nightTemp
 });
 
-$(document).on("slide", "#slider1", function (slideEvt) {
-    $("#sliderVal1").text(slideEvt.value + 'C');
+//First temperature check
+$("#currentbox").text(get('currentTemperature', 'current_temperature'));
+$("#sliderVal1").text(get('dayTemperature', 'day_temperature'));
+$("#sliderVal2").text(get('nightTemperature', 'night_temperature'));
+
+$("#slider1").on("slide", function (slideEvt) {
+    $("#sliderVal1").text(slideEvt.value);
+    dayTemp = slideEvt.value;
 });
-$(document).on("slide", "#slider2", function (slideEvt) {
-    $("#sliderVal2").text(slideEvt.value + 'C');
-});
-$('.daynightSlider').slider({
-    formatter: function (value) {
-        return value + 'C';
-    }
+$("#slider2").on("slide", function (slideEvt) {
+    $("#sliderVal2").text(slideEvt.value);
+    nightTemp = slideEvt.value;
 });
 
-function addDayTemp() {
-    var value = value + 0.1;
-    //Slider("#slider1").setValue(value)
-    $("#slider1").slider("setValue", value)
+function addTargetTemp(mul) {
+    targetTemp = Math.round(parseFloat(targetTemp + mul * 0.1) * 100) / 100;
+    $("#slider").roundSlider('setValue', targetTemp);
+}
+function addDayTemp(mul) {
+    dayTemp = Math.round(parseFloat(dayTemp + mul * 0.1) * 100) / 100;
+    $(".daynightSlider1").bootstrapSlider('setValue', dayTemp);
+    $("#sliderVal1").text(dayTemp);
+}
+function addNightTemp(mul) {
+    nightTemp = Math.round(parseFloat(nightTemp + mul * 0.1) * 100) / 100;
+    $(".daynightSlider2").bootstrapSlider('setValue', nightTemp);
+    $("#sliderVal2").text(nightTemp);
 }
 
+function saveTemp() {
+    put('targetTemperature', 'target_temperature', $("#slider .rs-tooltip").html());
+    put('dayTemperature', 'day_temperature', dayTemp);
+    put('nightTemperature', 'night_temperature', nightTemp);
+    $("#currentbox").text(get('currentTemperature', 'current_temperature'));
 
+    clockTemp();
+}
 
+function clockTemp() {
+    //if ((get('currentTemperature', 'current_temperature')) != (get('targetTemperature', 'target_temperature'))) {
+        var intervalLoop = setInterval(function () {
+            $("#currentbox").text(get('currentTemperature', 'current_temperature'));
+        }, 200);
+    //}
+}
 
+function discardTemp() {
+    targetemp = get('targetTemperature', 'target_temperature');
+    dayTemp = get('dayTemperature', 'day_temperature');
+    nightTemp = get('nightTemperature', 'night_temperature');
+    $("#slider").roundSlider('setValue', targetTemp);
+    $(".daynightSlider1").bootstrapSlider('setValue', dayTemp);
+    $(".daynightSlider2").bootstrapSlider('setValue', nightTemp);
+    $("#sliderVal1").text(dayTemp);
+    $("#sliderVal2").text(nightTemp);
+    $("#currentbox").text(get('currentTemperature', 'current_temperature'));
+}

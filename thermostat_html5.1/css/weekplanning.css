@@ -1,8 +1,14 @@
 /*Header fix*/
-.list-wrapper {
+.list-group {
     height: calc(100% - 60px);
     margin-top: 60px;
 }
-.mainframe-item {
-    border: 1px solid red;
+
+.list-group-item {
+    font-size: 14px;
 }
+
+    .list-group-item div {
+        border: 1px solid red;
+        height: 30px;
+    }
