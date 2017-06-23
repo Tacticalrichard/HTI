@@ -2,33 +2,44 @@
     <link rel="stylesheet" href="css/weekplanning.css">
 </head>
 
-<div class="list-group list-wrapper">
-    <div class="list-group-item">
-        <h1>Monday</h1>
-        <div class="eventviewer"></div>
-    </div>
-    <div class="list-group-item">
-        <h1>Tuesday</h1>
-        <div class="eventviewer"></div>
-    </div>
-    <div class="list-group-item">
-        <h1>Wednesday</h1>
-        <div class="eventviewer"></div>
-    </div>
-    <div class="list-group-item">
-        <h1>Thursday</h1>
-        <div class="eventviewer"></div>
-    </div>
-    <div class="list-group-item">
-        <h1>Friday</h1>
-        <div class="eventviewer"></div>
-    </div>
-    <div class="list-group-item">
-        <h1>Saturday</h1>
-        <div class="eventviewer"></div>
-    </div>
-    <div class="list-group-item">
-        <h1>Sunday</h1>
-        <div class="eventviewer"></div>
-    </div>
+<div class="list-group">
+    <a class="list-group-item list-group-item-action" id="monday">
+        <p>Monday</p>
+        <div id="boxMonday"></div>
+    </a>
+    <a class="list-group-item list-group-item-action" id="tuesday">
+        <p>Tuesday</p>
+        <div id="boxTuesday"></div>
+    </a>
+    <a class="list-group-item list-group-item-action" id="wednesday">
+        <p>Wednesday</p>
+        <div id="boxWednesday"></div>
+    </a>
+    <a class="list-group-item list-group-item-action" id="thursday">
+        <p>Thursday</p>
+        <div id="boxThursday"></div>
+    </a>
+    <a class="list-group-item list-group-item-action" id="friday">
+        <p>Friday</p>
+        <div id="boxFriday"></div>
+    </a>
+    <a class="list-group-item list-group-item-action" id="saturday">
+        <p>Saturday</p>
+        <div id="boxSaturday"></div>
+    </a>
+    <a class="list-group-item list-group-item-action" id="sunday">
+        <p>Sunday</p>
+        <div id="boxSunday"></div>
+    </a>
 </div>
+
+<script language="text/javascript">
+    function load_js() {
+        var head = document.getElementsByTagName('head')[0];
+        var script = document.createElement('script');
+        script.type = 'text/javascript';
+        script.src = 'js/weekplanning.js';
+        head.appendChild(script);
+    }
+    load_js();
+</script>

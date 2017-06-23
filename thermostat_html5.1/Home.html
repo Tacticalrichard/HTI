@@ -1,41 +1,47 @@
 ﻿<head>
     <link rel="stylesheet" href="css/home.css">
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
 </head>
 
 <div class="row mainframe">
     <div class="col-xs-2 mainframe-divider mainframe-wing">
-        <span id="sliderVal1">23C</span>
-        <i class="material-icons addTemp" style="left:15px" onclick="addDayTemp()">add</i>
-        <input class="daynightSlider1" data-slider-id="slider1" />
-        <i class="material-icons subtractTemp" style="left:15px" onclick="subtractDayTemp()">remove</i>
+        <span id="sliderVal1"></span>
+        <i class="material-icons addTemp" style="left:15px" onclick="addDayTemp(1)">add</i>
+        <input class="daynightSlider1" data-slider-id="slider1"/>
+        <i class="material-icons subtractTemp" style="left:15px" onclick="addDayTemp(-1)">remove</i>
     </div>
     <div class="col-xs-8 mainframe-divider">
         <div class="col-xs-12 mainframe-box">
             <h1>Day</h1>
         </div>
         <div class="col-xs-12 mainframe-circle">
+            <i class="material-icons" style="left: 45px;" onClick="addTargetTemp(-1)">remove</i>
             <div id="slider"></div>
+            <span id="currentbox"></span>
+            <i class="material-icons" style="right: 45px;" onClick="addTargetTemp(1)">add</i>
         </div>
         <div class="col-xs-12 mainframe-box">
-            <button type="button" class="btn btn-primary btn-success btn-lg">Save</button>
-            <button type="button" class="btn btn-default btn-danger btn-lg">Discard</button>
+            <button type="button" class="btn btn-primary btn-success btn-lg" onclick="saveTemp()">Save</button>
+            <button type="button" class="btn btn-default btn-danger btn-lg" onclick="discardTemp()">Discard</button>
         </div>
     </div>
     <div class="col-xs-2 mainframe-divider mainframe-wing">
-        <span id="sliderVal2">18C</span>
-        <i class="material-icons addTemp" style="right:12px" onclick="addNightTemp()">add</i>
+        <span id="sliderVal2"></span>
+        <i class="material-icons addTemp" style="right:12px" onclick="addNightTemp(1)">add</i>
         <input class="daynightSlider2" data-slider-id="slider2" />
-        <i class="material-icons subtractTemp" style="right:12px" onclick="subtractNightTemp()">remove</i>
+        <i class="material-icons subtractTemp" style="right:12px" onclick="addNightTemp(-1)">remove</i>
     </div>
 </div>
-<div class="col-xs-12 footer"></div>
+<div class="col-xs-12 footer">
+    <div id="currentTemperature"></div>
+</div>
 
 <script language="text/javascript">
     function load_js() {
         var head = document.getElementsByTagName('head')[0];
         var script = document.createElement('script');
         script.type = 'text/javascript';
-        script.src = '/thermostat_html5.1/js/home.js';
+        script.src = 'js/home.js';
         head.appendChild(script);
     }
     load_js();
