@@ -7,12 +7,12 @@
     <div class="col-xs-2 mainframe-divider mainframe-wing">
         <span id="sliderVal1"></span>
         <i class="material-icons addTemp" style="left:15px" onclick="addDayTemp(1)">add</i>
-        <input class="daynightSlider1" data-slider-id="slider1"/>
+        <input class="daynightSlider1" data-slider-id="slider1" />
         <i class="material-icons subtractTemp" style="left:15px" onclick="addDayTemp(-1)">remove</i>
     </div>
     <div class="col-xs-8 mainframe-divider">
         <div class="col-xs-12 mainframe-box">
-            <h1>Day</h1>
+            <h1 id="readDay"></h1>
         </div>
         <div class="col-xs-12 mainframe-circle">
             <i class="material-icons" style="left: 45px;" onClick="addTargetTemp(-1)">remove</i>
@@ -32,8 +32,18 @@
         <i class="material-icons subtractTemp" style="right:12px" onclick="addNightTemp(-1)">remove</i>
     </div>
 </div>
+
 <div class="col-xs-12 footer">
-    <div id="currentTemperature"></div>
+    <div class="footerhead">
+        <div class="switchcontainer">
+            <a id="switch" class="toggler">&nbsp;</a>
+        </div>
+        <p>Weekplanning</p>
+    </div>
+    <div id="rectangle">
+
+
+    </div>
 </div>
 
 <script language="text/javascript">

@@ -3,10 +3,15 @@ var currentTemp = get('currentTemperature', 'current_temperature');
 var targetTemp = get('targetTemperature', 'target_temperature');
 var dayTemp = get('dayTemperature', 'day_temperature');
 var nightTemp = get('nightTemperature', 'night_temperature');
+var wpState = get('weekProgramState', 'week_program_state');
 
-//var intervalLoop = setInterval(function () { clockTemp() }, 200);
 
-//Executes
+//Error fix
+put('weekProgramState', 'week_program_state', 'on');
+
+
+
+//Initializes the sliders
 $("#slider").roundSlider({
     radius: 105,
     width: 5,
@@ -43,11 +48,34 @@ $(".daynightSlider2").bootstrapSlider({
     value: nightTemp
 });
 
+//Reads the day
+$("#readDay").text(get('day', 'current_day'));
+
+//Check if week program is turned on or off
+if (wpState === "off") {
+    $(".toggler").addClass("off");
+}
+
+//Button to turn the week program on or off
+$(".toggler").click(function (evt) {
+    evt.stopImmediatePropagation();
+    if ($(".toggler").hasClass("off")) {
+        put('weekProgramState', 'week_program_state', 'on');
+        $(".toggler").toggleClass("off");
+
+    } else {
+        $(".toggler").toggleClass("off");
+        put('weekProgramState', 'week_program_state', 'off');
+    }
+});
+
 //First temperature check
 $("#currentbox").text(get('currentTemperature', 'current_temperature'));
 $("#sliderVal1").text(get('dayTemperature', 'day_temperature'));
 $("#sliderVal2").text(get('nightTemperature', 'night_temperature'));
 
+
+//Change the values of the sliders according to the slider
 $("#slider1").on("slide", function (slideEvt) {
     $("#sliderVal1").text(slideEvt.value);
     dayTemp = slideEvt.value;
@@ -56,6 +84,14 @@ $("#slider2").on("slide", function (slideEvt) {
     $("#sliderVal2").text(slideEvt.value);
     nightTemp = slideEvt.value;
 });
+
+
+//Copy of the weekplanning at that day
+
+
+//$("#placeholder").plot([[[0, 0], [1, 1]]], { yaxis: { max: 1 } }).data("plot");
+
+
 
 function addTargetTemp(mul) {
     targetTemp = Math.round(parseFloat(targetTemp + mul * 0.1) * 100) / 100;
@@ -82,11 +118,12 @@ function saveTemp() {
 }
 
 function clockTemp() {
-    //if ((get('currentTemperature', 'current_temperature')) != (get('targetTemperature', 'target_temperature'))) {
-        var intervalLoop = setInterval(function () {
-            $("#currentbox").text(get('currentTemperature', 'current_temperature'));
-        }, 200);
-    //}
+    count = 0;
+    var x = setInterval(function () {
+        $("#currentbox").text(get('currentTemperature', 'current_temperature'));
+        if (count > 250) clearInterval(x);
+        count++;
+    }, 200);
 }
 
 function discardTemp() {
