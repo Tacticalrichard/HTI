@@ -2,6 +2,7 @@
 #day {
     font-size: 20px;
     margin: 80px 0 10px 10px;
+    color: #6b6b6b !important;
 }
 
 .list-group {
@@ -16,8 +17,7 @@
 
     /*Margin fix*/
     .list-group-item p {
-        margin-bottom: 5px;
-        !important;
+        margin-bottom: 5px !important;
     }
 
 .timecontainer {
@@ -38,6 +38,7 @@
     color: #333;
     font-size: 20px !important;
 }
+
     .badge:hover {
         color: #3EACA8 !important;
     }
@@ -60,9 +61,6 @@
     font-size: 20px;
 }
 
-
-
-
 .slidercontainer {
     height: auto;
     padding: 10px;
@@ -75,3 +73,30 @@
         height: 40px;
         width: 70px;
     }
+
+.switchbox i {
+    margin: 10px;
+    color: #6b6b6b;
+}
+.control-label {
+    font-size: 16px !important;
+    font-weight: 500 !important;
+    color: #6b6b6b !important;
+    margin: 10px !important;
+}
+.form-control {
+    width: 150px !important;
+    margin: 0 20px !important;
+    font-size: 36px !important
+}
+
+.error1, .error2, .error3, .error4 {
+    display: none;
+    margin-left: 10px;
+}
+
+.error1.show, .error2.show, .error3.show, .error4.show {
+    display: block;
+    color: red;
+    margin-left: 10px;
+}

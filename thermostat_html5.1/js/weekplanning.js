@@ -8,7 +8,7 @@ $(document).on("click", "#monday", function (event) {
     $(".container-fluid").animate({
         "left": $(".container-fluid").width()
     }, animSpeed).promise().done(function () {
-        $(".container-fluid").load("/weekdays/monday.html", function () {
+        $(".container-fluid").load("/thermostat_html5.1/weekdays/monday.html", function () {
             daySelect = "Monday";
             $(".container-fluid").animate({
                 "left": 0
@@ -22,7 +22,7 @@ $(document).on("click", "#tuesday", function (event) {
     $(".container-fluid").animate({
         "left": $(".container-fluid").width()
     }, animSpeed).promise().done(function () {
-        $(".container-fluid").load("/weekdays/tuesday.html", function () {
+        $(".container-fluid").load("/thermostat_html5.1/weekdays/tuesday.html", function () {
             daySelect = "Tuesday";
             $(".container-fluid").animate({
                 "left": 0
@@ -35,7 +35,7 @@ $(document).on("click", "#wednesday", function (event) {
     $(".container-fluid").animate({
         "left": $(".container-fluid").width()
     }, animSpeed).promise().done(function () {
-        $(".container-fluid").load("/weekdays/wednesday.html", function () {
+        $(".container-fluid").load("/thermostat_html5.1/weekdays/wednesday.html", function () {
             daySelect = "Wednesday";
             $(".container-fluid").animate({
                 "left": 0
@@ -48,7 +48,7 @@ $(document).on("click", "#thursday", function (event) {
     $(".container-fluid").animate({
         "left": $(".container-fluid").width()
     }, animSpeed).promise().done(function () {
-        $(".container-fluid").load("/weekdays/wednesday.html", function () {
+        $(".container-fluid").load("/thermostat_html5.1/weekdays/wednesday.html", function () {
             daySelect = "Thursday";
             $(".container-fluid").animate({
                 "left": 0
@@ -61,7 +61,7 @@ $(document).on("click", "#friday", function (event) {
     $(".container-fluid").animate({
         "left": $(".container-fluid").width()
     }, animSpeed).promise().done(function () {
-        $(".container-fluid").load("/weekdays/friday.html", function () {
+        $(".container-fluid").load("/thermostat_html5.1/weekdays/friday.html", function () {
             daySelect = "Friday";
             $(".container-fluid").animate({
                 "left": 0
@@ -74,7 +74,7 @@ $(document).on("click", "#saturday", function (event) {
     $(".container-fluid").animate({
         "left": $(".container-fluid").width()
     }, animSpeed).promise().done(function () {
-        $(".container-fluid").load("/weekdays/saturday.html", function () {
+        $(".container-fluid").load("/thermostat_html5.1/weekdays/saturday.html", function () {
             daySelect = "Saturday";
             $(".container-fluid").animate({
                 "left": 0
@@ -87,7 +87,7 @@ $(document).on("click", "#sunday", function (event) {
     $(".container-fluid").animate({
         "left": $(".container-fluid").width()
     }, animSpeed).promise().done(function () {
-        $(".container-fluid").load("/weekdays/sunday.html", function () {
+        $(".container-fluid").load("/thermostat_html5.1/weekdays/sunday.html", function () {
             daySelect = "Sunday";
             $(".container-fluid").animate({
                 "left": 0
@@ -95,3 +95,13 @@ $(document).on("click", "#sunday", function (event) {
         });
     });
 });
+
+var dayItem;
+var dayList;
+var n = 0;
+for (var i = 0; i < 7; i++) {
+    dayItem = $("#box" + n).siblings().text();
+    dayList = getProgram(dayItem).length;
+    $("#box" + n).text("You currently have " + dayList + " switches active");
+    n++
+}
