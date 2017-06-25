@@ -5,35 +5,81 @@
 <h2 id="day">Monday</h2>
 
 <ul class="list-group">
-    <li class="list-group-item">
+    <li id="item0" class='list-group-item'>
         <p>Period 1</p>
-        <div class="timecontainer" id="test">
-            <h4>10:00</h4><h4> - </h4><h4>11:00</h4>
+        <div class='timecontainer'>
+            <h4 id='time0'></h4>
         </div>
-        <i class="badge material-icons" onclick="deletePeriod()">delete</i>
+        <i class='badge material-icons' onclick='removeSwitch(this)'>delete</i>
     </li>
-    <li class="list-group-item">
+    <li id="item1" class='list-group-item'>
         <p>Period 2</p>
-        <div class="timecontainer">
-            <h4>12:00</h4><h4> - </h4><h4>15:00</h4>
+        <div class='timecontainer'>
+            <h4 id='time1'></h4>
         </div>
-        <i class="badge material-icons" onclick="deletePeriod()">delete</i>
+        <i class='badge material-icons' onclick='removeSwitch(this)'>delete</i>
     </li>
+    <li id="item2" class='list-group-item'>
+        <p>Period 3</p>
+        <div class='timecontainer'>
+            <h4 id='time2'></h4>
+        </div>
+        <i class='badge material-icons' onclick='removeSwitch(this)'>delete</i>
+    </li>
+    <li id="item3" class='list-group-item'>
+        <p>Period 4</p>
+        <div class='timecontainer'>
+            <h4 id='time3'></h4>
+        </div>
+        <i class='badge material-icons' onclick='removeSwitch(this)'>delete</i>
+    </li>
+    <li id="item4" class='list-group-item'>
+        <p>Period 5</p>
+        <div class='timecontainer'>
+            <h4 id='time4'></h4>
+        </div>
+        <i class='badge material-icons' onclick='removeSwitch(this)'>delete</i>
+    </li>
+    <li id="item5" class='list-group-item'>
+        <p>Period 6</p>
+        <div class='timecontainer'>
+            <h4 id='time5'></h4>
+        </div>
+        <i class='badge material-icons' onclick='removeSwitch(this)'>delete</i>
+    </li>
+    <li id="item6" class='list-group-item'>
+        <p>Period 7</p>
+        <div class='timecontainer'>
+            <h4 id='time6'></h4>
+        </div>
+        <i class='badge material-icons' onclick='removeSwitch(this)'>delete</i>
+    </li>
+    <li id="item7" class='list-group-item'>
+        <p>Period 8</p>
+        <div class='timecontainer'>
+            <h4 id='time7'></h4>
+        </div>
+        <i class='badge material-icons' onclick='removeSwitch(this)'>delete</i>
+    </li>
+    <li id="item8" class='list-group-item'>
+        <p>Period 9</p>
+        <div class='timecontainer'>
+            <h4 id='time8'></h4>
+        </div>
+        <i class='badge material-icons' onclick='removeSwitch(this)'>delete</i>
+    </li>
+    <li id="item9" class='list-group-item'>
+        <p>Period 10</p>
+        <div class='timecontainer'>
+            <h4 id='time9'></h4>
+        </div>
+        <i class='badge material-icons' onclick='removeSwitch(this)'>delete</i>
+    </li>
+
 </ul>
 
 <button type="button" class="btn btn-primary btn-lg btn-block switchadder">Add switch</button>
 
-
-<!--pattern="[0-2]{1}[0-9]{1}:[0-5]{1}[0-9]{1}"-->
-
-<!--
-    <form class="slidercontainer" id="slider1">
-    <input type="number" placeholder="Start Hour">
-    <input type="number" placeholder="End Hour">
-    <button type="button" class="btn btn-primary btn-success btn-lg" onclick="saveSwitch()">Save</button>
-    <button type="button" class="btn btn-default btn-danger btn-lg" onclick="discardSwitch()">Discard</button>
-</form>
--->
 <script language="text/javascript">
     function load_js() {
         var head = document.getElementsByTagName('head')[0];

@@ -6,10 +6,8 @@ var nightTemp = get('nightTemperature', 'night_temperature');
 var wpState = get('weekProgramState', 'week_program_state');
 
 
-//Error fix
-put('weekProgramState', 'week_program_state', 'on');
-
-
+//Initializers
+clockTemp();
 
 //Initializes the sliders
 $("#slider").roundSlider({
@@ -51,6 +49,11 @@ $(".daynightSlider2").bootstrapSlider({
 //Reads the day
 $("#readDay").text(get('day', 'current_day'));
 
+//Updates the time
+var x = setInterval(function () {
+    $("#rectangle").text(get('time', 'time'));
+}, 1000);
+
 //Check if week program is turned on or off
 if (wpState === "off") {
     $(".toggler").addClass("off");
@@ -86,13 +89,7 @@ $("#slider2").on("slide", function (slideEvt) {
 });
 
 
-//Copy of the weekplanning at that day
-
-
-//$("#placeholder").plot([[[0, 0], [1, 1]]], { yaxis: { max: 1 } }).data("plot");
-
-
-
+//Functions
 function addTargetTemp(mul) {
     targetTemp = Math.round(parseFloat(targetTemp + mul * 0.1) * 100) / 100;
     $("#slider").roundSlider('setValue', targetTemp);
@@ -118,12 +115,12 @@ function saveTemp() {
 }
 
 function clockTemp() {
-    count = 0;
+    var count = 0;
     var x = setInterval(function () {
         $("#currentbox").text(get('currentTemperature', 'current_temperature'));
-        if (count > 250) clearInterval(x);
+        if (count > 50) clearInterval(x);
         count++;
-    }, 200);
+    }, 1000);
 }
 
 function discardTemp() {

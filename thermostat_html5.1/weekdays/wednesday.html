@@ -5,67 +5,88 @@
 <h2 id="day">Wednesday</h2>
 
 <ul class="list-group">
-    <li class="list-group-item">
-        <p>Slider 1</p>
-        <div id="slider1">
-            <p>11:00 - 12:00</p>
+    <li id="item0" class='list-group-item'>
+        <p>Period 1</p>
+        <div class='timecontainer'>
+            <h4 id='time0'></h4>
         </div>
-
-        <div class="badges">
-            <i class="material-icons">edit</i>
-            <i class="material-icons">delete</i>
-        </div>
-
+        <i class='badge material-icons' onclick='removeSwitch(this)'>delete</i>
     </li>
-    <li class="list-group-item">
-        <p>Slider 2</p>
-        <div id="slider2">
-            <p>13:00 - 16:00</p>
+    <li id="item1" class='list-group-item'>
+        <p>Period 2</p>
+        <div class='timecontainer'>
+            <h4 id='time1'></h4>
         </div>
-
-        <div class="badges">
-            <i class="material-icons">edit</i>
-            <i class="material-icons">delete</i>
-        </div>
-
+        <i class='badge material-icons' onclick='removeSwitch(this)'>delete</i>
     </li>
-    <li class="list-group-item">
-        <p>Slider 3</p>
-        <div id="slider3">
-            <p>17:30 - 18:00</p>
+    <li id="item2" class='list-group-item'>
+        <p>Period 3</p>
+        <div class='timecontainer'>
+            <h4 id='time2'></h4>
         </div>
-
-        <div class="badges">
-            <i class="material-icons">edit</i>
-            <i class="material-icons">delete</i>
-        </div>
-
+        <i class='badge material-icons' onclick='removeSwitch(this)'>delete</i>
     </li>
-    <li class="list-group-item">
-        <p>Slider 4</p>
-        <div id="slider4">
-            <p>18:30 - 21:00</p>
+    <li id="item3" class='list-group-item'>
+        <p>Period 4</p>
+        <div class='timecontainer'>
+            <h4 id='time3'></h4>
         </div>
-
-        <div class="badges">
-            <i class="material-icons">edit</i>
-            <i class="material-icons">delete</i>
-        </div>
-
+        <i class='badge material-icons' onclick='removeSwitch(this)'>delete</i>
     </li>
-    <li class="list-group-item">
-        <p>Slider 5</p>
-        <div id="slider5">
-            <p>22:00 - 24:00</p>
+    <li id="item4" class='list-group-item'>
+        <p>Period 5</p>
+        <div class='timecontainer'>
+            <h4 id='time4'></h4>
         </div>
-
-        <div class="badges">
-            <i class="material-icons">edit</i>
-            <i class="material-icons">delete</i>
-        </div>
-
+        <i class='badge material-icons' onclick='removeSwitch(this)'>delete</i>
     </li>
-
-    <button type="button" class="btn btn-primary btn-lg btn-block">Add switch</button>
+    <li id="item5" class='list-group-item'>
+        <p>Period 6</p>
+        <div class='timecontainer'>
+            <h4 id='time5'></h4>
+        </div>
+        <i class='badge material-icons' onclick='removeSwitch(this)'>delete</i>
+    </li>
+    <li id="item6" class='list-group-item'>
+        <p>Period 7</p>
+        <div class='timecontainer'>
+            <h4 id='time6'></h4>
+        </div>
+        <i class='badge material-icons' onclick='removeSwitch(this)'>delete</i>
+    </li>
+    <li id="item7" class='list-group-item'>
+        <p>Period 8</p>
+        <div class='timecontainer'>
+            <h4 id='time7'></h4>
+        </div>
+        <i class='badge material-icons' onclick='removeSwitch(this)'>delete</i>
+    </li>
+    <li id="item8" class='list-group-item'>
+        <p>Period 9</p>
+        <div class='timecontainer'>
+            <h4 id='time8'></h4>
+        </div>
+        <i class='badge material-icons' onclick='removeSwitch(this)'>delete</i>
+    </li>
+    <li id="item9" class='list-group-item'>
+        <p>Period 10</p>
+        <div class='timecontainer'>
+            <h4 id='time9'></h4>
+        </div>
+        <i class='badge material-icons' onclick='removeSwitch(this)'>delete</i>
+    </li>
 
 </ul>
+
+<button type="button" class="btn btn-primary btn-lg btn-block switchadder">Add switch</button>
+
+<script language="text/javascript">
+    function load_js() {
+        var head = document.getElementsByTagName('head')[0];
+        var script = document.createElement('script');
+        script.type = 'text/javascript';
+        script.src = 'js/day.js';
+        head.appendChild(script);
+    }
+    load_js();
+</script>
