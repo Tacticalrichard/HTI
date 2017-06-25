@@ -5,32 +5,73 @@
 }
 
 .list-group {
-    height: calc(100% - 60px);
+    height: calc(100% - 190px);
+    margin-bottom: 80px;
+    overflow-y: scroll;
 }
 
 .list-group-item {
-    font-size: 14px;
+    border-radius: 0 !important;
 }
 
-    .list-group-item div p {
-        font-size: 20px;
+    /*Margin fix*/
+    .list-group-item p {
+        margin-bottom: 5px;
+        !important;
     }
 
-.badges {
+.timecontainer {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+    /*Margin fix*/
+    .timecontainer h4 {
+        margin: 0 0 0 5px !important;
+    }
+
+.badge {
     position: absolute;
     top: 10px;
-    right: 15px;
+    right: 8px;
+    background: none !important;
+    color: #333;
+    font-size: 20px !important;
 }
-
-    .badges i {
-        font-size: 20px !important;
+    .badge:hover {
+        color: #3EACA8 !important;
     }
 
-.btn {
+.list-group-item a:first-of-type {
+    right: 30px !important;
+}
+
+.popover {
+    z-index: 999999999 !important;
+}
+
+.switchadder, .addadder {
     height: 80px !important;
     border: none !important;
     border-radius: 0 !important;
     background-color: #3EACA8 !important;
     position: fixed;
     bottom: 0;
+    font-size: 20px;
 }
+
+
+
+
+.slidercontainer {
+    height: auto;
+    padding: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+
+    .slidercontainer input {
+        height: 40px;
+        width: 70px;
+    }

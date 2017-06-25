@@ -35,8 +35,10 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
+    flex-direction: column;
     z-index: 99999999999;
     background: white;
+    color: #6b6b6b;
 }
 .se-pre-con img {
     height: 200px;

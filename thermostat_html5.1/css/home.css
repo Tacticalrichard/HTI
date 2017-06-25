@@ -192,5 +192,50 @@
 
 .footer {
     height: 180px;
-    border: 1px solid purple;
+    padding-top: 5px;
+    border-top: 1px solid #ddd;
+}
+
+.footerhead {
+    height: 40px;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+    .footerhead p {
+        margin: 0 0 0 10px !important;
+    }
+
+.switchcontainer {
+    height: 22px;
+    width: 32px;
+    border: 1px solid #6b6b6b;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+#switch {
+    height: 20px;
+    background: green;
+    cursor: pointer;
+    border: 2px solid #eeeeee;
+    border-right-width: 15px;
+    padding: 0 5px;
+    text-decoration: none;
+    transition: all .5s ease;
+}
+
+    #switch.off {
+        background: red;
+        border-right-width: 2px;
+        border-left-width: 15px;
+    }
+
+
+#rectangle {
+    margin-top: 10px;
+    height: 80px;
+    width: 100%;
+    border: 1px solid red;
 }

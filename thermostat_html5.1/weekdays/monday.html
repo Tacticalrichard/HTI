@@ -6,66 +6,41 @@
 
 <ul class="list-group">
     <li class="list-group-item">
-        <p>Slider 1</p>
-        <div id="slider1">
-            <p>11:00 - 12:00</p>
+        <p>Period 1</p>
+        <div class="timecontainer" id="test">
+            <h4>10:00</h4><h4> - </h4><h4>11:00</h4>
         </div>
-
-        <div class="badges">
-            <i class="material-icons">edit</i>
-            <i class="material-icons">delete</i>
-        </div>
-
+        <i class="badge material-icons" onclick="deletePeriod()">delete</i>
     </li>
     <li class="list-group-item">
-        <p>Slider 2</p>
-        <div id="slider2">
-            <p>13:00 - 16:00</p>
+        <p>Period 2</p>
+        <div class="timecontainer">
+            <h4>12:00</h4><h4> - </h4><h4>15:00</h4>
         </div>
-
-        <div class="badges">
-            <i class="material-icons">edit</i>
-            <i class="material-icons">delete</i>
-        </div>
-
+        <i class="badge material-icons" onclick="deletePeriod()">delete</i>
     </li>
-    <li class="list-group-item">
-        <p>Slider 3</p>
-        <div id="slider3">
-            <p>17:30 - 18:00</p>
-        </div>
-
-        <div class="badges">
-            <i class="material-icons">edit</i>
-            <i class="material-icons">delete</i>
-        </div>
-
-    </li>
-    <li class="list-group-item">
-        <p>Slider 4</p>
-        <div id="slider4">
-            <p>18:30 - 21:00</p>
-        </div>
-
-        <div class="badges">
-            <i class="material-icons">edit</i>
-            <i class="material-icons">delete</i>
-        </div>
-
-    </li>
-    <li class="list-group-item">
-        <p>Slider 5</p>
-        <div id="slider5">
-            <p>22:00 - 24:00</p>
-        </div>
-
-        <div class="badges">
-            <i class="material-icons">edit</i>
-            <i class="material-icons">delete</i>
-        </div>
-
-    </li>
-
-    <button type="button" class="btn btn-primary btn-lg btn-block">Add switch</button>
-
 </ul>
+
+<button type="button" class="btn btn-primary btn-lg btn-block switchadder">Add switch</button>
+
+
+<!--pattern="[0-2]{1}[0-9]{1}:[0-5]{1}[0-9]{1}"-->
+
+<!--
+    <form class="slidercontainer" id="slider1">
+    <input type="number" placeholder="Start Hour">
+    <input type="number" placeholder="End Hour">
+    <button type="button" class="btn btn-primary btn-success btn-lg" onclick="saveSwitch()">Save</button>
+    <button type="button" class="btn btn-default btn-danger btn-lg" onclick="discardSwitch()">Discard</button>
+</form>
+-->
+<script language="text/javascript">
+    function load_js() {
+        var head = document.getElementsByTagName('head')[0];
+        var script = document.createElement('script');
+        script.type = 'text/javascript';
+        script.src = 'js/day.js';
+        head.appendChild(script);
+    }
+    load_js();
+</script>
