@@ -2,6 +2,7 @@
 var saver;
 
 //Initialize
+getWeekProgram();
 getProgram(daySelect);
 refresh();
 ifSwitch();
@@ -11,7 +12,7 @@ $(document).on("click", ".switchadder", function (event) {
     $(".container-fluid").animate({
         "left": $(".container-fluid").width()
     }, animSpeed).promise().done(function () {
-        $(".container-fluid").load("/thermostat_html5.1/add.html", function () {
+        $(".container-fluid").load("add.html", function () {
             $(".container-fluid").animate({
                 "left": 0
             }, animSpeed);
@@ -24,7 +25,7 @@ $(document).on("click", ".switchbox i", function (event) {
     $(".container-fluid").animate({
         "left": $(".container-fluid").width()
     }, animSpeed).promise().done(function () {
-        $(".container-fluid").load("/thermostat_html5.1/weekdays/" + daySelect + ".html", function () {
+        $(".container-fluid").load("weekdays/" + daySelect + ".html", function () {
             $(".container-fluid").animate({
                 "left": 0
             }, animSpeed);
@@ -87,6 +88,19 @@ function addSwitch() {
     setWeekProgram();
     refresh();
     correctProgram();
+    goBack();
+}
+
+function goBack() {
+    $(".container-fluid").animate({
+        "left": $(".container-fluid").width()
+    }, animSpeed).promise().done(function () {
+        $(".container-fluid").load("weekdays/" + daySelect + ".html", function () {
+            $(".container-fluid").animate({
+                "left": 0
+            }, animSpeed);
+        });
+    });
 }
 
 function correctProgram() {
@@ -94,11 +108,13 @@ function correctProgram() {
 }
 
 function removeSwitch(item) {
+    saver = get("weekProgramState", "week_program_state");
     var switchNumber = $(item).parent().attr("id");
     switchNumber = switchNumber.match(/\d+/);
     removePeriod(daySelect, switchNumber);
     refresh();
-    ifSwitch()
+    ifSwitch();
+    correctProgram();
 }
 
 function refresh() {

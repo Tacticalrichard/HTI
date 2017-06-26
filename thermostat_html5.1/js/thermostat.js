@@ -11,7 +11,7 @@ $(document).ready(function () {
         $(".se-pre-con").delay(1000).css("display", "none");
     });
 
-    $(".container-fluid").load("/thermostat_html5.1/home.html");
+    $(".container-fluid").load("home.html");
     $(window).bind("load", function () {
         $.getScript("js/home.js");
     });
@@ -28,7 +28,7 @@ $(document).ready(function () {
         $(".container-fluid").animate({
             "left": $(".container-fluid").width()
         }, animSpeed).promise().done(function () {
-            $(".container-fluid").load("/thermostat_html5.1/home.html", function () {
+            $(".container-fluid").load("home.html", function () {
                 $(".container-fluid").animate({
                     "left": 0
                 }, animSpeed);
@@ -41,7 +41,7 @@ $(document).ready(function () {
         $(".container-fluid").animate({
             "left": $(".container-fluid").width()
         }, animSpeed).promise().done(function () {
-            $(".container-fluid").load("/thermostat_html5.1/weekplanning.html", function () {
+            $(".container-fluid").load("weekplanning.html", function () {
                 $(".container-fluid").animate({
                     "left": 0
                 }, animSpeed);

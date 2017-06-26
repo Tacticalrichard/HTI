@@ -7,6 +7,7 @@ var wpState = get('weekProgramState', 'week_program_state');
 
 
 //Initializers
+getWeekProgram();
 clockTemp();
 
 //Initializes the sliders
