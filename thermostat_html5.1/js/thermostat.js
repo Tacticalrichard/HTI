@@ -3,11 +3,9 @@ $(document).ready(function () {
     //Variables
     var animSpeed = 300;
 
-    //Executables
-
-    // Wait for window load
+    //Wait for window load
     $(window).load(function () {
-        // Animate loader off screen
+        //Add loader
         $(".se-pre-con").delay(1000).css("display", "none");
     });
 

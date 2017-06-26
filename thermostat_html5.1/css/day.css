@@ -90,12 +90,12 @@
     font-size: 36px !important
 }
 
-.error1, .error2, .error3, .error4 {
+.error1, .error2, .error3, .error4, .error5 {
     display: none;
     margin-left: 10px;
 }
 
-.error1.show, .error2.show, .error3.show, .error4.show {
+.error1.show, .error2.show, .error3.show, .error4.show, .error5.show {
     display: block;
     color: red;
     margin-left: 10px;

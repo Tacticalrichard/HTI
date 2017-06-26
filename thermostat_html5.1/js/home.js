@@ -51,7 +51,8 @@ $(".daynightSlider2").bootstrapSlider({
 $("#readDay").text(get('day', 'current_day'));
 
 //Updates the time
-var x = setInterval(function () {
+$("#rectangle").text(get('time', 'time'));
+setInterval(function () {
     $("#rectangle").text(get('time', 'time'));
 }, 1000);
 

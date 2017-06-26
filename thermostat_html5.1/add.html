@@ -10,18 +10,20 @@
         <div class="form-group">
             <label for="inputStart" class="col-sm-2 control-label">Start hour</label>
             <div class="col-sm-10 firstinput">
-                <input type="text" class="form-control" id="inputStart" value="">
+                <input type="text" class="form-control" id="inputStart" value=""/>
                 <span class="error1">This field is required</span>
             </div>
         </div>
         <div class="form-group">
             <label for="inputEnd" class="col-sm-2 control-label">End hour</label>
             <div class="col-sm-10 secondinput">
-                <input type="text" class="form-control" id="inputEnd" value="" />
+                <input type="text" class="form-control" id="inputEnd" value=""/>
+
                 <span class="error1">This field is required</span>
                 <span class="error2">Maximum number of switches exceeded, please delete one first before continuing</span>
                 <span class="error3">Starting time cannot be greater than ending time</span>
                 <span class="error4">Please use the correct format (HH:MM)</span>
+                <span class="error5">Switches can not span across multiple days</span>
             </div>
         </div>
     </form>

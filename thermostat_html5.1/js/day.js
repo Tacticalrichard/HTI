@@ -1,7 +1,7 @@
 //Variables
 var saver;
 
-//Initialize
+//Initializers
 getWeekProgram();
 getProgram(daySelect);
 refresh();
@@ -39,13 +39,14 @@ function validateSwitch(starter, ender) {
     $(".error2").removeClass("show");
     $(".error3").removeClass("show");
     $(".error4").removeClass("show");
+    $(".error5").removeClass("show");
 
-    var isStartValid = /^([0-1][0-9]|2[0-3]):([0-5][0-9])$/.test(starter.value);
-    var isEndValid = /^([0-1][0-9]|2[0-3]):([0-5][0-9])$/.test(ender.value);
+    //Adds input pattern (HH:MM)
+    var rege = new RegExp('^([0-1][0-9]|2[0-3]):([0-5][0-9])$');
 
-
-    if (isStartValid || isEndValid) {
-        $(".error4").showClass("show");
+    //Checks pattern
+    if (!(rege.test(starter)) || !(rege.test(ender))) {
+        $(".error4").addClass("show");
     } else {
         //both empty
         if (starter == "" && ender == "") {
@@ -64,8 +65,11 @@ function validateSwitch(starter, ender) {
             $(".error3").addClass("show");
         }
         //maximum number of switches
-        else if (getProgram(daySelect).length === 5 && !(dayProgram[getProgram(daySelect).length - 1][1] === '23:59')) {
+        else if (getProgram(daySelect).length === 10) { //|| getProgram(daySelect)[day].length === 5 || getProgram(daySelect)[night].length === 5) {
             $(".error2").addClass("show");
+        }
+        else if (starter == '23:59' || ender == '24:00') {
+            $(".error5").addClass("show");
         }
         else {
             addSwitch();
