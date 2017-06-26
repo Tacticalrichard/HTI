@@ -54,6 +54,9 @@ $("#readDay").text(get('day', 'current_day'));
 $("#rectangle").text(get('time', 'time'));
 setInterval(function () {
     $("#rectangle").text(get('time', 'time'));
+    if (get('time', 'time') == '00:00') {
+        $("#readDay").text(get('day', 'current_day'));
+    }
 }, 1000);
 
 //Check if week program is turned on or off
