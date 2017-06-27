@@ -65,7 +65,7 @@ function validateSwitch(starter, ender) {
             $(".error3").addClass("show");
         }
         //maximum number of switches
-        else if (getProgram(daySelect).length === 10) { //|| getProgram(daySelect)[day].length === 5 || getProgram(daySelect)[night].length === 5) {
+        else if (getProgram(daySelect).length === 5) {
             $(".error2").addClass("show");
         }
         else if (starter == '23:59' || ender == '24:00') {

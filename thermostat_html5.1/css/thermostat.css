@@ -6,7 +6,7 @@ body {
     /*Font override*/
     font-family: 'Roboto', sans-serif !important;
     color: #444444;
-    position: relative;
+    position: fixed;
 }
 
 .container-fluid {
